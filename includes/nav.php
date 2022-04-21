@@ -6,6 +6,7 @@ function buildMenu($cssUlClass, $cssLiClass, $cssLinkClass) {
         'home' => 'Accueil',
         'guess' => 'Devines',
         'glacier' => 'Le glacier',
+        'menu' => 'Le menu',
         'contact' => 'Contact'
     ];
     

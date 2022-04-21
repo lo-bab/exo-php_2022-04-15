@@ -7,6 +7,9 @@ session_start();
 // récupère le/les répertoire(s) à partir de localhost pour définir la racine du site
 define('SITEBASE', rtrim('/' . ltrim($_SERVER['SCRIPT_FILENAME'], $_SERVER['DOCUMENT_ROOT']), 'index.php'));
 
+// récupère le PATH du site
+define('SITEPATH', dirname(__dir__) . DIRECTORY_SEPARATOR . 'exo-php_2022-04-15/');
+
 // répertoire qui contient tous les fichiers de fonctions que l'on veut mettre en inclusion
 //(pratique si on veut séparer les fonctions dans plusieurs fichiers sinon autant inclure directement le fichier)
 require 'includes.php';
@@ -34,6 +37,12 @@ if ($_SERVER['REQUEST_URI'] === SITEBASE . '' || $_SERVER['REQUEST_URI'] === SIT
     // variables de page
     $title = 'Devines';
     $page = __DIR__ . '/pages/guess.php';
+
+} elseif ($_SERVER['REQUEST_URI'] === SITEBASE . 'menu') {
+
+    // variables de page
+    $title = 'Menu';
+    $page = __DIR__ . '/pages/menu.php';
 
 } else {
 
